@@ -37,6 +37,7 @@ void amau_setUnityLogDelegate(AMAULogCallbackDelegate logger)
 
 void amau_activate(char *configJson)
 {
+    [MyLogMiddleware useDefaultLogType];
     
     if (_unityLogDelegate != nil) {
         NSString* logStr = [NSString stringWithFormat:@"native_appmetrica.amau_activate(): deviceID= %s, config= %s", amau_cStringFromString(AMAAppMetrica.deviceID), configJson];
